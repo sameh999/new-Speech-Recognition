@@ -9,7 +9,7 @@ import time
 import os
 
 
-app = Flask(__name__, static_folder='/build', static_url_path='')
+app = Flask(__name__, static_folder='/myapp/build', static_url_path='')
 CORS(app)
 
 
@@ -41,8 +41,8 @@ def index():
             with open(audio_path, "wb") as f:
                 f.write(data.get_wav_data())
 
-            # transcript = tr.Transcribe(audio_path, audio_name)
-                transcript = "بلادي، بلادي، بلادي هو النشيد الوطني المصري الحالي، ألّفه محمد يونس القاضي ولحنه سيد درويش، وهو مشتق من كلمات ألقاها مصطفى كامل في إحدى أشهر خطبه عام 1907م"
+            transcript = tr.Transcribe(audio_path, audio_name)
+            # transcript = "بلادي، بلادي، بلادي هو النشيد الوطني المصري الحالي، ألّفه محمد يونس القاضي ولحنه سيد درويش، وهو مشتق من كلمات ألقاها مصطفى كامل في إحدى أشهر خطبه عام 1907م"
 
             # task(audio_path, audio_name)
             # transcript = " the text will be available a soon as possible "
